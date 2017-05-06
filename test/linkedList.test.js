@@ -21,9 +21,14 @@ describe('Linked List', function() {
     expect(linkedList).to.have.property('tail');
   });
 
-  // it('should add a value to head correctly', function() {
-  //   linkedList.addToHead(10);
-  //   assert.isNotNull(linkedList.contains(10));
-  // });
+  it('should add a value to head correctly', function() {
+    linkedList.addToHead(10);
+    expect(linkedList.head.data).to.equal(10);
+  });
+
+  it('should return all values correctly', function() {
+    const values = linkedList.returnAllValues();
+    expect(values).to.be.instanceof(Array);
+  });
 });
 

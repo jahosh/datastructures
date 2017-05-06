@@ -4,19 +4,47 @@ class Node {
     this.next = null;
   }
 }
-
-
 class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
   }
   addToHead(val) {
-    if (!head) {
+    if (this.head) {
+      let node = new Node(val);
+      let temp = this.head;
+      node.next = temp;
+      this.head = node;
+    } else {
       this.head = new Node(val);
     }
   }
+  addToTail(val) {
+    let node = new Node(val);
+    let current = this.head;
+    while (current.next !== null) {
+      current = current.next;
+    }
+    current.next = node;
+    this.tail = current.next;
+  }
+  returnAllValues() {
+    const values = [];
+    let current = this.head;
+    while (current) {
+      values.push(current);
+      current = current.next;
+    }
+    return values;
+  }
 }
 
+// const ll = new LinkedList();
+// ll.addToHead(10);
+// ll.addToHead(20);
+// ll.addToHead(30);
+// ll.addToHead(35);
+// ll.addToTail(10);
+// ll.addToTail(252);
 
 module.exports = LinkedList;
