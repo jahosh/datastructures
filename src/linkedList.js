@@ -37,6 +37,15 @@ class LinkedList {
     }
     return values;
   }
+  size() {
+    let count = 0;
+    let current = this.head;
+    while (current) {
+      current = current.next;
+      count++;
+    }
+    return count;
+  }
 }
 
 // const ll = new LinkedList();

@@ -30,5 +30,12 @@ describe('Linked List', function() {
     const values = linkedList.returnAllValues();
     expect(values).to.be.instanceof(Array);
   });
+
+  it('should return a size', function() {
+    linkedList.addToHead(20);
+    linkedList.addToHead(30);
+    const count = linkedList.size();
+    expect(count).to.equal(2);
+  });
 });
 
