@@ -37,5 +37,10 @@ describe('Linked List', function() {
     const count = linkedList.size();
     expect(count).to.equal(2);
   });
+
+  it('should detect cycles', function() {
+    
+    expect(linkedList.hasCycle()).to.be(false);
+  })
 });
 

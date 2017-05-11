@@ -6,17 +6,23 @@ class Node {
 }
 class LinkedList {
   constructor() {
+
     this.head = null;
     this.tail = null;
+
   }
   addToHead(val) {
+
     if (this.head) {
       let node = new Node(val);
       let temp = this.head;
       node.next = temp;
       this.head = node;
+
     } else {
+
       this.head = new Node(val);
+      
     }
   }
   addToTail(val) {
@@ -45,6 +51,20 @@ class LinkedList {
       count++;
     }
     return count;
+  }
+  detectCycle() {
+    let p1 = this.head;
+    let p2 = this.head;
+
+    while (p1 && p2 && p2.next) {
+      p1 = p1.next;
+      p2 = p2.next.next;
+      
+      if (p1 === p2) {
+        return true;
+      }
+    }
+    return false;
   }
 }
 
