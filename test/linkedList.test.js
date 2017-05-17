@@ -38,9 +38,12 @@ describe('Linked List', function() {
     expect(count).to.equal(2);
   });
 
-  it('should detect cycles', function() {
-    
+  it('should detect cycles', function() { 
     expect(linkedList.hasCycle()).to.be(false);
-  })
+  });
+
+  it('should delete a value' function() {
+
+  });
 });
 
