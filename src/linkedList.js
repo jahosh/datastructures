@@ -4,7 +4,7 @@ class Node {
     this.data = data;
     this.next = null;
   }
-  
+
 }
 class LinkedList {
 
@@ -15,22 +15,17 @@ class LinkedList {
 
   addToHead(val) {
     if (this.head) {
-
-      let node = new Node(val);
-      let temp = this.head;
+      const node = new Node(val);
+      const temp = this.head;
       node.next = temp;
       this.head = node;
-
     } else {
-
       this.head = new Node(val);
-      
     }
   }
 
   addToTail(val) {
-
-    let node = new Node(val);
+    const node = new Node(val);
     let current = this.head;
     while (current.next !== null) {
       current = current.next;
@@ -40,7 +35,6 @@ class LinkedList {
   }
 
   returnAllValues() {
-
     const values = [];
     let current = this.head;
     while (current) {
@@ -51,7 +45,6 @@ class LinkedList {
   }
 
   size() {
-
     let count = 0;
     let current = this.head;
     while (current) {
@@ -62,14 +55,12 @@ class LinkedList {
   }
 
   detectCycle() {
-
     let p1 = this.head;
     let p2 = this.head;
 
     while (p1 && p2 && p2.next) {
       p1 = p1.next;
       p2 = p2.next.next;
-      
       if (p1 === p2) {
         return true;
       }
