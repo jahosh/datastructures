@@ -1,19 +1,21 @@
 class Node {
+
   constructor(data) {
     this.data = data;
     this.next = null;
   }
+  
 }
 class LinkedList {
-  constructor() {
 
+  constructor() {
     this.head = null;
     this.tail = null;
-
   }
-  addToHead(val) {
 
+  addToHead(val) {
     if (this.head) {
+
       let node = new Node(val);
       let temp = this.head;
       node.next = temp;
@@ -25,7 +27,9 @@ class LinkedList {
       
     }
   }
+
   addToTail(val) {
+
     let node = new Node(val);
     let current = this.head;
     while (current.next !== null) {
@@ -34,7 +38,9 @@ class LinkedList {
     current.next = node;
     this.tail = current.next;
   }
+
   returnAllValues() {
+
     const values = [];
     let current = this.head;
     while (current) {
@@ -43,7 +49,9 @@ class LinkedList {
     }
     return values;
   }
+
   size() {
+
     let count = 0;
     let current = this.head;
     while (current) {
@@ -52,7 +60,9 @@ class LinkedList {
     }
     return count;
   }
+
   detectCycle() {
+
     let p1 = this.head;
     let p2 = this.head;
 
@@ -66,6 +76,7 @@ class LinkedList {
     }
     return false;
   }
+
 }
 
 // const ll = new LinkedList();
